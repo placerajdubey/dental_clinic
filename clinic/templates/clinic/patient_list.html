@@ -1,0 +1,9 @@
+<h2>Patient List</h2>
+<a href="{% url 'add_patient' %}">Add New Patient</a>
+<ul>
+    {% for patient in patients %}
+        <li>{{ patient.name }} ({{ patient.age }} yrs, {{ patient.gender }})</li>
+    {% empty %}
+        <li>No patients found.</li>
+    {% endfor %}
+</ul>
